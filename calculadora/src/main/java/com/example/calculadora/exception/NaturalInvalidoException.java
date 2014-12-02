@@ -1,10 +1,10 @@
 package com.example.calculadora.exception;
 
-public class EnteroInvalidoException extends RuntimeException {
+public class NaturalInvalidoException extends RuntimeException {
 	private static final long serialVersionUID = -1579518490246527848L;
 	private Object valor;
 	
-	public EnteroInvalidoException(Object valor) {
+	public NaturalInvalidoException(Object valor) {
 		this.valor = valor;
 	}
 
