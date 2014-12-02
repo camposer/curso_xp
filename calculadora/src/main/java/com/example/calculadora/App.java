@@ -1,9 +1,9 @@
 package com.example.calculadora;
 
-import com.example.calculadora.gui.Principal;
+import com.example.calculadora.gui.PrincipalGui;
 
 public class App {
 	public static void main(String[] args) {
-		new Principal().iniciar();
+		new PrincipalGui().iniciar();
 	}
 }
