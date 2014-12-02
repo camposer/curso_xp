@@ -17,17 +17,21 @@ public class CalculadoraServiceTest {
 
 	@Test
 	public void testSumar() {
-		// Verificando que funciona con operaciones normales
 		assertEquals(5, calculadoraService.sumar(2, 3));
 	}
 	
 	@Test(expected = EnteroInvalidoException.class)
 	public void testSumarBordes1() {
-		calculadoraService.sumar(Integer.MAX_VALUE, 1);
+		calculadoraService.sumar(-1, 0);
 	}
 	
-	@Test
+	@Test(expected = EnteroInvalidoException.class)
 	public void testSumarBordes2() {
+		calculadoraService.sumar(0, -23);
+	}
+
+	@Test
+	public void testSumarResultado() {
 		try {
 			calculadoraService.sumar(1, Integer.MAX_VALUE);
 			fail();

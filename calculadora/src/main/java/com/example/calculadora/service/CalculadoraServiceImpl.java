@@ -11,7 +11,7 @@ public class CalculadoraServiceImpl implements CalculadoraService {
 			throw new EnteroInvalidoException(a);
 		if (!esNatural(b))
 			throw new EnteroInvalidoException(b);
-		long c = a + b;
+		long c = (long)a + b;
 		if (c > Integer.MAX_VALUE)
 			throw new EnteroInvalidoException(c);
 		
@@ -39,7 +39,7 @@ public class CalculadoraServiceImpl implements CalculadoraService {
 			throw new EnteroInvalidoException(a);
 		if (!esNatural(b))
 			throw new EnteroInvalidoException(b);
-		long c = a * b;
+		long c = (long)a * b;
 		if (c > Integer.MAX_VALUE)
 			throw new EnteroInvalidoException(c);
 		
