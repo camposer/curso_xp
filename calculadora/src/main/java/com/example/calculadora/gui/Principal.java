@@ -1,5 +1,9 @@
 package com.example.calculadora.gui;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 import com.example.calculadora.service.CalculadoraService;
@@ -10,7 +14,13 @@ public class Principal {
 	private CalculadoraService calculadoraService;
 
 	public Principal() {
-		this.scanner = new Scanner(System.in);
+		//this.scanner = new Scanner(System.in);
+		try {
+			this.scanner = new Scanner(new FileInputStream("input/calculadora.txt"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.calculadoraService = CalculadoraServiceFactory
 				.createCalculadoraService();
 	}
@@ -68,5 +78,18 @@ public class Principal {
 			
 		}
 
+	}
+	
+	public static void main(String[] args) {
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(baos));
+		
+		new Principal().iniciar();
+		String result = baos.toString();
+		if (result.contains("hola no es un número entero"))
+			System.err.println("Todo bien!!!");
+		else
+			System.err.println("Todo mal!!!");
+		
 	}
 }
