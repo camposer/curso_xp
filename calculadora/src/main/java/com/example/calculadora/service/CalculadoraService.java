@@ -1,4 +1,4 @@
-package com.example.calculadora;
+package com.example.calculadora.service;
 
 /**
  * Calculadora de números enteros

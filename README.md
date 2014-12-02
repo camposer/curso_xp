@@ -33,3 +33,5 @@ Curso de Programación Extrema con Java
 	- https://www.scrumalliance.org/
 - Agile Atlas (Scrum)
 	- http://agileatlas.org/
+- JUnit
+	- http://junit.org/
