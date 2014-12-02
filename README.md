@@ -35,3 +35,5 @@ Curso de Programación Extrema con Java
 	- http://agileatlas.org/
 - JUnit
 	- http://junit.org/
+- JUnit API docs
+	- http://junit.sourceforge.net/javadoc/
