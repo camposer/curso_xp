@@ -1,6 +1,6 @@
 package com.example.calculadora.service;
 
-import com.example.calculadora.exception.DividendoInvalidoException;
+import com.example.calculadora.exception.DivisorInvalidoException;
 import com.example.calculadora.exception.DivisionInvalidaException;
 import com.example.calculadora.exception.EnteroInvalidoException;
 
@@ -52,7 +52,7 @@ public class CalculadoraServiceImpl implements CalculadoraService {
 		if (!esNatural(b))
 			throw new EnteroInvalidoException(b);
 		if (b == 0)
-			throw new DividendoInvalidoException(b);
+			throw new DivisorInvalidoException(b);
 		if (a % b != 0)
 			throw new DivisionInvalidaException(a, b);
 		

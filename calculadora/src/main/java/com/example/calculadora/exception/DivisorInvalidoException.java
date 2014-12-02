@@ -1,10 +1,10 @@
 package com.example.calculadora.exception;
 
-public class DividendoInvalidoException extends RuntimeException {
+public class DivisorInvalidoException extends RuntimeException {
 	private static final long serialVersionUID = -1211731080785208666L;
 	private int dividendo;
 	
-	public DividendoInvalidoException(int dividendo) {
+	public DivisorInvalidoException(int dividendo) {
 		this.dividendo = dividendo;
 	}
 
