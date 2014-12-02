@@ -58,5 +58,15 @@ class CalculadoraServiceImpl implements CalculadoraService {
 		
 		return a / b; 
 	}
+
+	public int potencia(int a, int b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int raiz(int a) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
 

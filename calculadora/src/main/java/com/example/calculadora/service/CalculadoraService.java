@@ -8,4 +8,6 @@ public interface CalculadoraService {
 	int restar(int a, int b);
 	int multiplicar(int a, int b);
 	int dividir(int a, int b);
+	int potencia(int a, int b);
+	int raiz(int a);
 }
