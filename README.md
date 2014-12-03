@@ -39,3 +39,9 @@ Curso de Programación Extrema con Java
 	- http://junit.sourceforge.net/javadoc/
 - Mockito User Guide
 	- https://docs.google.com/document/d/15mJ2Qrldx-J14ubTEnBj7nYN2FB8ap7xOn8GRAi24_A/edit
+
+
+##Herramienta de gestión
+
+- Historias de Usuario
+	- https://drive.google.com/folderview?id=0B7_SWS8S_hooa2N2bE1ENDlVYm8&usp=sharing

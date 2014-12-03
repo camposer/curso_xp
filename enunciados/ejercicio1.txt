@@ -2,3 +2,4 @@
 2.- Completar las pruebas unitarias para los métodos restar, multiplicar y dividir de la Calculadora.
 3.- Deberá crear dos categorías, a saber: CasosBorde y CasosOrdinarios. Todas las validaciones de bordes (Ej. testSumarBordes1, testSumarResultado) deberán pertenecer a la categoría CasosBorde y el resto a CasosOrdinarios. Una vez creadas las categorías, deberá implementar clases que permitan ejecutar sólo los CasosOrdinarios, sólo los CasosBordes y todas las pruebas.
 4.- Añadir a la prueba unitaria de la GUI, un caso para cuando el segundo operando en una operación de división es igual a 0
+5.- Añadir a la prueba unitaria de la GUI, un caso que utilice mockito y valide satisfatoriamente la raíz cuadrada de un número
