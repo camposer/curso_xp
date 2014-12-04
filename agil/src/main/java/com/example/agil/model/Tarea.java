@@ -97,4 +97,14 @@ public class Tarea {
 	public void setIteracion(Iteracion iteracion) {
 		this.iteracion = iteracion;
 	}
+
+	@Override
+	public String toString() {
+		return "Tarea [id=" + id + ", nombre=" + nombre + ", descripcion="
+				+ descripcion + ", prioridad=" + prioridad + ", esfuerzo="
+				+ esfuerzo + ", release=" + release + ", fecha=" + fecha
+				+ ", valor=" + valor + ", estado=" + estado + ", iteracion="
+				+ iteracion + "]";
+	}
+		
 }

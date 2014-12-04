@@ -1,6 +1,9 @@
 Cómo configurar SVN en Ubuntu
 =============================
 
+Recursos:
+	- https://help.ubuntu.com/community/Subversion
+
 0.- Versión de Ubuntu
 	Ubuntu 14.04.1 LTS \n \l
 
@@ -25,5 +28,24 @@ Cómo configurar SVN en Ubuntu
 	$ sudo chmod -R g+rws agil/
 
 6.- Configurar acceso WebDav
-	
+	$ sudo aptitude install libapache2-svn
 
+	- Dentro del fichero /etc/apache2/mods-available/dav_svn.conf
+	  <Location /svn>
+	     DAV svn
+    	 SVNParentPath /home/svn
+	     SVNListParentPath On
+    	 AuthType Basic
+	     AuthName "Subversion Repository"
+    	 AuthUserFile /etc/subversion/passwd
+	     Require valid-user
+	  </Location>
+
+7.- Reiniciar apache
+	$ sudo /etc/init.d/apache2 restart
+
+8.- Añadir usuarios:
+	$ sudo htpasswd -c /etc/subversion/passwd user_name
+	$ sudo htpasswd /etc/subversion/passwd user_name
+
+	NOTA: Utilizar la opción -c sólo la primera vez (para crear el archivo)

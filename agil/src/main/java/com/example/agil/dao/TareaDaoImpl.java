@@ -12,28 +12,34 @@ import com.example.agil.model.Tarea;
 
 public class TareaDaoImpl extends BaseDao implements TareaDao {
 
-	public void agregar(Tarea t) {
+	public Tarea agregar(Tarea t) {
 		String sql = "INSERT INTO tarea(nombre, descripcion, "
 				+ "prioridad, esfuerzo, release, "
 				+ "fecha, valor, estado, iteracion_id) "
 				+ "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
-			PreparedStatement pstmt = con.prepareStatement(sql);
+			PreparedStatement pstmt = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 			pstmt.setString(1, t.getNombre());
 			pstmt.setString(2, t.getDescripcion());
 			pstmt.setInt(3, t.getPrioridad());
 			pstmt.setInt(4, t.getEsfuerzo());
 			pstmt.setString(5, t.getRelease());
-			pstmt.setInt(6, t.getValor());
-			pstmt.setDate(7, new java.sql.Date(t.getFecha().getTime()));
+			pstmt.setDate(6, new java.sql.Date(t.getFecha().getTime()));
+			pstmt.setInt(7, t.getValor());
 			pstmt.setString(8, t.getEstado().name());
 			pstmt.setInt(9, t.getIteracion().getId());
 
 			pstmt.executeUpdate();
+			
+			ResultSet rs = pstmt.getGeneratedKeys();
+			if (rs.next())
+				t.setId(rs.getInt(1));
 		} catch (SQLException e) {
 			throw new AgilException(e);
 		}
+		
+		return t;
 	}
 
 	public void modificar(Tarea t) {

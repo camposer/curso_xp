@@ -1,0 +1,12 @@
+Cómo iniciar derby en local
+===========================
+
+0.- Modificar permisos de seguridad en local
+	- Abrir el fichero JRE_HOME/lib/security/java.policy como Administrador. Ej. JRE_HOME = C:\Archivos de programa\Java\jre1.8
+	- Incluir dentro del grant principal (justo antes de que finalice el archivo, la siguiente línea:
+	 permission java.net.SocketPermission "localhost:1527", "connect,listen,resolve";
+
+NOTA: Para abrir un editor de texto como admin puede hacer lo siguiente: clic en inicio -> en buscar escribir wordpad -> clic derecho sobre el icono y seleccionar Abrir como administrador
+
+1.- Ejecutar el fichero:
+	DERBY_HOME/bin/startNetworkServer.bat

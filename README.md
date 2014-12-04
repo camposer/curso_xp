@@ -71,6 +71,10 @@ Curso de Programación Extrema con Java
 	- Trac
 		- http://trac.edgewall.org/
 
+- Programación en Pareja
+	- http://es.wikipedia.org/wiki/Programaci%C3%B3n_en_pareja
+	- http://www.cs.wm.edu/~noonan/pairprog.html
+
 ##Herramienta de gestión
 
 - Historias de Usuario
