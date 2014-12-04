@@ -1,0 +1,29 @@
+Cómo configurar SVN en Ubuntu
+=============================
+
+0.- Versión de Ubuntu
+	Ubuntu 14.04.1 LTS \n \l
+
+1.- Instalar apache
+	$ sudo aptitude install apache2
+
+2.- Crear grupo especial para subversion
+	$ groupadd subversion
+
+3.- Instalar subversion
+	$ sudo aptitude install subversion
+
+4.- Configurar directorio para repositorios
+	$ sudo mkdir /home/svn
+
+5.- Configurar repositorio
+	$ cd /home/svn
+	$ sudo mkdir agil
+	$ sudo svnadmin /home/svn/agil
+	$ sudo svnadmin create /home/svn/agil
+	$ sudo chown -R www-data:subversion agil
+	$ sudo chmod -R g+rws agil/
+
+6.- Configurar acceso WebDav
+	
+
