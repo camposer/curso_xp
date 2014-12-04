@@ -5,6 +5,7 @@ import java.util.List;
 import com.example.agil.dao.TareaDao;
 import com.example.agil.dao.TareaDaoImpl;
 import com.example.agil.model.Tarea;
+import com.example.agil.model.Tarea.Estado;
 
 public class TareaServiceImpl implements TareaService {
 	private TareaDao tareaDao;
@@ -33,4 +34,19 @@ public class TareaServiceImpl implements TareaService {
 		return tareaDao.obtenerTodos();
 	}
 
+	/**Método para modificar el estado de una tarea**/
+	public void modificarEstadoTarea(Integer id, Estado estado) {
+		
+		Tarea tarea= new Tarea();
+		
+		tarea= obtenerTarea(id);
+		tarea.setEstado(estado);
+		modificarTarea(tarea);
+		
+	}
+	public void modificarTareaEsfuerzo(Tarea t) {
+		tareaDao.modificarEsfuerzo(t);
+	}
+	
+	
 }

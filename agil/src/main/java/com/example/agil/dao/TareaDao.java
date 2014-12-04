@@ -10,4 +10,5 @@ public interface TareaDao {
 	public void eliminar(Integer id);
 	public Tarea obtener(Integer id);
 	public List<Tarea> obtenerTodos();
+	public void modificarEsfuerzo(Tarea t);
 }

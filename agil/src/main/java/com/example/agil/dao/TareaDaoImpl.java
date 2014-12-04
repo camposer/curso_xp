@@ -55,11 +55,26 @@ public class TareaDaoImpl extends BaseDao implements TareaDao {
 			pstmt.setInt(3, t.getPrioridad());
 			pstmt.setInt(4, t.getEsfuerzo());
 			pstmt.setString(5, t.getRelease());
-			pstmt.setInt(6, t.getValor());
-			pstmt.setDate(7, new java.sql.Date(t.getFecha().getTime()));
+			pstmt.setDate(6, new java.sql.Date(t.getFecha().getTime()));
+			pstmt.setInt(7, t.getValor());
 			pstmt.setString(8, t.getEstado().name());
 			pstmt.setInt(9, t.getIteracion().getId());
 			pstmt.setInt(10, t.getId());
+
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			throw new AgilException(e);
+		}
+	}
+	
+	public void modificarEsfuerzo(Tarea t) {
+		String sql = "UPDATE tarea SET esfuerzo = ? "
+				+ "WHERE id = ?";
+
+		try {
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, t.getEsfuerzo());
+			pstmt.setInt(2, t.getId());
 
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
